@@ -6,12 +6,12 @@ import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
-import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 function App() {
 
-  const history =  useHistory();
+  const feeling = useSelector(store => store.feeling);
 
   return (
     <Router>
@@ -20,6 +20,7 @@ function App() {
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
           <Link to='/'>HOME</Link><br/>
+          <p>{feeling}</p>
         </header>
         <div>
           {/* routes */}
