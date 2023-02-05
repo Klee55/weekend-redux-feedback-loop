@@ -10,7 +10,7 @@ import logger from 'redux-logger';
 //start of reducers
 
 const feeling = (state= '', action) => {
-    console.log('feeling reducer');
+    // console.log('feeling reducer');
     if(action.type === 'SET_FEELING') {
         return action.payload;
     }
@@ -19,17 +19,26 @@ const feeling = (state= '', action) => {
 }
 
 const understanding = (state = '', action) => {
-    console.log('understanding reducer');
+    // console.log('understanding reducer');
+    if(action.type === 'SET_UNDERSTANDING') {
+        return action.payload;
+    }
     return state;
 }
 
 const support = (state = '', action) => {
-    console.log('support reducer');
+    // console.log('support reducer');
+    if(action.type === 'SET_SUPPORT') {
+        return action.payload;
+    }
     return state;
 }
 
 const comments = (state= '', action) => {
-    console.log('comments reducer');
+    // console.log('comments reducer');
+    if(action.type === 'SET_COMMENTS') {
+        return action.payload;
+    }
     return state;
 }
 

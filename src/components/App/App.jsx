@@ -10,8 +10,15 @@ import { useSelector } from 'react-redux';
 
 
 function App() {
-
+  
+  // for testing and visual purposes
   const feeling = useSelector(store => store.feeling);
+  const understanding = useSelector(store => store.understanding);
+  const support = useSelector(store => store.support);
+  const comments = useSelector(store => store.comments);
+
+
+
 
   return (
     <Router>
@@ -20,7 +27,12 @@ function App() {
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
           <Link to='/'>HOME</Link><br/>
-          <p>{feeling}</p>
+          {/* for testing and visual purposes */}
+          <p>Feeling: {feeling}</p>
+          <p>Understanding: {understanding}</p>
+          <p>Support: {support}</p>
+          <p>Comments: {comments}</p>
+          {/* for testing and visual purposes */}
         </header>
         <div>
           {/* routes */}

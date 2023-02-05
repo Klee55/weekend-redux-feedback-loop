@@ -1,6 +1,5 @@
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
 
 const Feeling = () => {
     
@@ -9,10 +8,8 @@ const Feeling = () => {
     const dispatch = useDispatch();
     // const [feeling, setFeeling] = useState('');
 
-
     const handleChange = (event) => {
         event.preventDefault();
-        // setFeeling(event.target.value);
         dispatch({ type: 'SET_FEELING', payload: event.target.value});
     }
 
