@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const Review = () => {
 
@@ -7,6 +8,9 @@ const Review = () => {
     const understanding = useSelector(store => store.understanding);
     const support = useSelector(store => store.support);
     const comments = useSelector(store => store.comments);
+    
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const postFeedback = () => {
 
@@ -22,6 +26,8 @@ const Review = () => {
         axios.post('/feedback', feedbackArray)
         .then(response => {
             console.log('post request made', response);
+            dispatch({ type: 'CLEAR_ALL'});
+            history.push('/startfeedback');
         })
         .catch(error => {
             console.log('error with post', error);
