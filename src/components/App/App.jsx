@@ -31,7 +31,12 @@ function App() {
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
           <br/>
-          <Link to='/startfeedback'>HOME</Link><br/>
+          <Link to='/startfeedback'>Home</Link>
+          <Link to='/feeling'>Feeling</Link>
+          <Link to='/understanding'>Understanding</Link>
+          <Link to='/support'>Support</Link>
+          <Link to='/comments'>Comments</Link>
+          <Link to='/review'>Review</Link>
           {/* for testing and visual purposes */}
           {/* <p>Feeling: {feeling}</p>
           <p>Understanding: {understanding}</p>
