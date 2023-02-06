@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useSelector } from "react-redux";
 
 const Review = () => {
@@ -6,6 +7,26 @@ const Review = () => {
     const understanding = useSelector(store => store.understanding);
     const support = useSelector(store => store.support);
     const comments = useSelector(store => store.comments);
+
+    const postFeedback = () => {
+
+        const feedbackArray = {
+            feeling: feeling,
+            understanding: understanding,
+            support: support,
+            comments: comments
+        }
+    
+        console.log(feedbackArray);
+
+        axios.post('/feedback', feedbackArray)
+        .then(response => {
+            console.log('post request made', response);
+        })
+        .catch(error => {
+            console.log('error with post', error);
+        });
+    }
 
     return (
         <div>
@@ -16,7 +37,7 @@ const Review = () => {
             <p>Comments: {comments}</p>
             <br/>
             <br/>
-            <button>Submit Feedback</button>
+            <button onClick={postFeedback}>Submit Feedback</button>
         </div>
     )
 }
