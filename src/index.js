@@ -13,8 +13,9 @@ const feeling = (state= '', action) => {
     // console.log('feeling reducer');
     if(action.type === 'SET_FEELING') {
         return action.payload;
+    } else if (action.type === 'CLEAR_ALL') {
+        return '';
     }
-    // console.log(state);
     return state;
 }
 
@@ -22,6 +23,8 @@ const understanding = (state = '', action) => {
     // console.log('understanding reducer');
     if(action.type === 'SET_UNDERSTANDING') {
         return action.payload;
+    } else if (action.type === 'CLEAR_ALL') {
+        return '';
     }
     return state;
 }
@@ -30,6 +33,8 @@ const support = (state = '', action) => {
     // console.log('support reducer');
     if(action.type === 'SET_SUPPORT') {
         return action.payload;
+    } else if (action.type === 'CLEAR_ALL') {
+        return '';
     }
     return state;
 }
@@ -38,6 +43,8 @@ const comments = (state= '', action) => {
     // console.log('comments reducer');
     if(action.type === 'SET_COMMENTS') {
         return action.payload;
+    } else if (action.type === 'CLEAR_ALL') {
+        return '';
     }
     return state;
 }

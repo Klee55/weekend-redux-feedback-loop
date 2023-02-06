@@ -9,6 +9,7 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import StartFeedback from '../StartFeedback/StartFeedback';
 
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
         <header className='App-header'>
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
-          <Link to='/'>HOME</Link><br/>
+          <br/>
+          <Link to='/startfeedback'>HOME</Link><br/>
           {/* for testing and visual purposes */}
           {/* <p>Feeling: {feeling}</p>
           <p>Understanding: {understanding}</p>
@@ -43,7 +45,9 @@ function App() {
           {/* <Route exact path='/'>
             <button onClick={() => history.push('/feeling')}>Start Feedback</button>
             </Route> */}
-          <Link to='/feeling'> Start Feedback</Link>
+          <Route exact path= "/startfeedback" >
+            <StartFeedback />
+          </Route>
           <Route exact path="/feeling">
             <Feeling />
           </Route>
