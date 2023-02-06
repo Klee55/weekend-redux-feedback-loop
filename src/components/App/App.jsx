@@ -6,7 +6,9 @@ import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
   const understanding = useSelector(store => store.understanding);
   const support = useSelector(store => store.support);
   const comments = useSelector(store => store.comments);
+
+  const history = useHistory();
 
 
 
@@ -28,15 +32,18 @@ function App() {
           <h4>Don't forget it!</h4>
           <Link to='/'>HOME</Link><br/>
           {/* for testing and visual purposes */}
-          <p>Feeling: {feeling}</p>
+          {/* <p>Feeling: {feeling}</p>
           <p>Understanding: {understanding}</p>
           <p>Support: {support}</p>
-          <p>Comments: {comments}</p>
+          <p>Comments: {comments}</p> */}
           {/* for testing and visual purposes */}
         </header>
         <div>
           {/* routes */}
-          <Link to='/feeling'>GO</Link>
+          {/* <Route exact path='/'>
+            <button onClick={() => history.push('/feeling')}>Start Feedback</button>
+            </Route> */}
+          <Link to='/feeling'> Start Feedback</Link>
           <Route exact path="/feeling">
             <Feeling />
           </Route>
@@ -48,6 +55,9 @@ function App() {
           </Route>
           <Route exact path="/comments">
             <Comments />
+          </Route>
+          <Route exact path="/review">
+            <Review />
           </Route>
 
         </div>
