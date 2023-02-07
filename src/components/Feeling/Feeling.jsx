@@ -8,8 +8,17 @@ const Feeling = () => {
     const dispatch = useDispatch();
     // const [feeling, setFeeling] = useState('');
 
+    // alert if input is empty
+    const inputValidation = () => {
+        if(feeling === "") {
+            return alert('feedback cannot be empty');    
+        } 
+        history.push('/understanding');
+    }
+
     const handleChange = (event) => {
         event.preventDefault();
+        console.log(event.target.value);
         dispatch({ type: 'SET_FEELING', payload: event.target.value});
     }
 
@@ -19,8 +28,8 @@ const Feeling = () => {
         <div>
             <h1>How are feeling today?</h1>
             <p>Feeling?</p>
-            <input value={feeling} onChange={handleChange} type="number" />
-            <button onClick={() => history.push('/understanding')}>NEXT</button>
+            <input value={feeling} onChange={handleChange} type="number" required="number"/>
+            <button onClick={inputValidation}>NEXT</button>
             
         </div>
     )

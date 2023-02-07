@@ -8,6 +8,13 @@ const Understanding = () => {
     const dispatch = useDispatch();
     // const [feeling, setFeeling] = useState('');
 
+    // alert if input is empty
+    const inputValidation = () => {
+        if(understanding === "") {
+            return alert('feedback cannot be empty');    
+        } 
+        history.push('/support');
+    }
 
     const handleChange = (event) => {
         event.preventDefault();
@@ -19,7 +26,7 @@ const Understanding = () => {
             <h1>How well are you understanding the content?</h1>
             <p>Understanding?</p>
             <input value={understanding} onChange={handleChange} type="number"></input>
-            <button onClick={() => history.push('/support')}>NEXT</button>
+            <button onClick={inputValidation}>NEXT</button>
         </div>
     )
 }
